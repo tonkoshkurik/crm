@@ -34,7 +34,107 @@ class ContactCrudController extends CrudController
         */
 
         // TODO: remove setFromDb() and manually define Fields and Columns
-        $this->crud->setFromDb();
+//        $this->crud->setFromDb();
+        $this->crud->addColumns([
+            [
+                'name' => 'name',
+                'label' => 'Name',
+                'type' => 'text'
+            ],
+            [
+                'name' => 'email',
+                'label' => 'Email',
+                'type' => 'email'
+            ],
+            ["name"=>"phone","type"=>"text","label"=>"Phone"],
+            ["name"=>"position","type"=>"text","label"=>"Position"],
+//            ["name"=>"notes","type"=>"text","label"=>"Notes"],
+            ["name"=>"city","type"=>"text","label"=>"City"],
+            ["name"=>"experience","type"=>"text","label"=>"Experience"],
+            ["name"=>"salary","type"=>"text","label"=>"Salary"],
+            ["name"=>"companies","type"=>"text","label"=>"Companies"],
+            ["name"=>"advantages","type"=>"text","label"=>"Advantages"],
+            ["name"=>"expectations","type"=>"text","label"=>"Expectations"],
+            ["name"=>"stage.name","type"=>"text","label"=>"Stage"],
+        ]);
+
+        $this->crud->addFields([
+            [
+                'name' => 'name',
+                'label' => 'Name',
+                'type' => 'text'
+            ],
+            [
+                'name' => 'email',
+                'label' => 'Email',
+                'type' => 'email'
+            ],
+            [
+                "name"=> "stage",
+                "type"=> "select",
+                "label"=> "Stage",
+                'entity' => 'stage', // the method that defines the relationship in your Model
+                'attribute' => 'name', // foreign key attribute that is shown to user
+                'model' => "App\Models\Stage",
+            ],
+            [
+                "name"=> "phone",
+                "type"=> "text",
+                "label"=> "Phone"
+            ],
+            [
+                "name"=> "position",
+                "type"=> "text",
+                "label"=> "Position"
+            ],
+            [
+                "name"=> "city",
+                "type"=> "text",
+                "label"=> "City"
+            ],
+            [
+                "name"=> "experience",
+                "type"=> "text",
+                "label"=> "Experience"
+            ],
+            [
+                "name"=> "salary",
+                "type"=> "text",
+                "label"=> "Salary"
+            ],
+            [
+                "name"=> "english_id",
+                "type"=> "number",
+                "label"=> "English level"
+            ],
+            [
+                "name"=> "cv_path",
+                "type"=> "upload",
+                "upload" => true,
+                "label"=> "CV"
+            ],
+            [
+                "name"=> "companies",
+                "type"=> "text",
+                "label"=> "Companies"
+            ],
+            [
+                "name"=> "advantages",
+                "type"=> "text",
+                "label"=> "Advantages"
+            ],
+            [
+                "name"=> "expectations",
+                "type"=> "text",
+                "label"=> "Expectations"
+            ],
+            [
+                "name"=> "notes",
+                "type"=> "text",
+                "label"=> "Notes"
+            ]
+
+        ]);
 
         // add asterisk for fields that are required in ContactRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');

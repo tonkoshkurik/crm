@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
 
-class Contact extends Model
+class Stage extends Model
 {
     use CrudTrait;
 
@@ -15,13 +15,11 @@ class Contact extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'contacts';
+    protected $table = 'stages';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    protected $fillable = [
-        "name", "email", "phone", "position", "city", "experience", "salary", "english_id", "cv_path", "companies",
-    ];
+    protected $fillable = ['name'];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -36,10 +34,6 @@ class Contact extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-    public function stage()
-    {
-        return  $this->belongsTo('App\Models\Stage');
-    }
 
     /*
     |--------------------------------------------------------------------------
@@ -58,12 +52,4 @@ class Contact extends Model
     | MUTATORS
     |--------------------------------------------------------------------------
     */
-    public function setCv_pathAttribute($value)
-    {
-        $attribute_name = "cv_path";
-        $disk = "public";
-        $destination_path = "uploads/cv";
-
-        $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path);
-    }
 }

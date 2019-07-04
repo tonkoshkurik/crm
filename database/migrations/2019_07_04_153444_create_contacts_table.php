@@ -19,7 +19,7 @@ class CreateContactsTable extends Migration
             $table->string('phone')->nullable();
             $table->string('position')->nullable();
             $table->string('city')->nullable();
-            $table->string('expirience')->nullable();
+            $table->string('experience')->nullable();
             $table->string('salary')->nullable();
             $table->integer('english_id')->nullable();
             $table->string('cv_path')->nullable();
