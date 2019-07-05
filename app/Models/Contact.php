@@ -20,7 +20,8 @@ class Contact extends Model
     // public $timestamps = false;
     // protected $guarded = ['id'];
     protected $fillable = [
-        "name", "email", "phone", "position", "city", "experience", "salary", "english_id", "cv_path", "companies",
+        "name", "email", "phone", "position", "city", "experience", "salary", "english_level", "cv_path", "companies",
+        'advantages', 'expectations', 'notes'
     ];
     // protected $hidden = [];
     // protected $dates = [];

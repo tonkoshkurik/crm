@@ -48,14 +48,14 @@ class ContactCrudController extends CrudController
             ],
             ["name"=>"phone","type"=>"text","label"=>"Phone"],
             ["name"=>"position","type"=>"text","label"=>"Position"],
-//            ["name"=>"notes","type"=>"text","label"=>"Notes"],
+            ["name"=>"stage.name","type"=>"text","label"=>"Stage"],
+            ["name"=>"notes","type"=>"text","label"=>"Notes"],
             ["name"=>"city","type"=>"text","label"=>"City"],
             ["name"=>"experience","type"=>"text","label"=>"Experience"],
             ["name"=>"salary","type"=>"text","label"=>"Salary"],
             ["name"=>"companies","type"=>"text","label"=>"Companies"],
             ["name"=>"advantages","type"=>"text","label"=>"Advantages"],
             ["name"=>"expectations","type"=>"text","label"=>"Expectations"],
-            ["name"=>"stage.name","type"=>"text","label"=>"Stage"],
         ]);
 
         $this->crud->addFields([
@@ -70,7 +70,7 @@ class ContactCrudController extends CrudController
                 'type' => 'email'
             ],
             [
-                "name"=> "stage",
+                "name"=> "stage_id",
                 "type"=> "select",
                 "label"=> "Stage",
                 'entity' => 'stage', // the method that defines the relationship in your Model
@@ -94,7 +94,7 @@ class ContactCrudController extends CrudController
             ],
             [
                 "name"=> "experience",
-                "type"=> "text",
+                "type"=> "enum",
                 "label"=> "Experience"
             ],
             [
@@ -103,8 +103,8 @@ class ContactCrudController extends CrudController
                 "label"=> "Salary"
             ],
             [
-                "name"=> "english_id",
-                "type"=> "number",
+                "name"=> "english_level",
+                "type"=> "enum",
                 "label"=> "English level"
             ],
             [

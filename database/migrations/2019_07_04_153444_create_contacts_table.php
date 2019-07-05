@@ -19,14 +19,14 @@ class CreateContactsTable extends Migration
             $table->string('phone')->nullable();
             $table->string('position')->nullable();
             $table->string('city')->nullable();
-            $table->string('experience')->nullable();
+            $table->enum('experience', ['Less than 1 year', 'At least a year', '2 years or more', '3 years or more', '5 years or more'])->nullable();
             $table->string('salary')->nullable();
-            $table->integer('english_id')->nullable();
+            $table->enum('english_level', [ 'Beginner', 'Pre-Intermediate', 'Intermediate', 'Upper Intermediate', 'Fluent', 'Native'])->nullable();
             $table->string('cv_path')->nullable();
             $table->text('companies')->nullable();
             $table->text('advantages')->nullable();
             $table->text('expectations')->nullable();
-            $table->integer('stage')->default(1);
+            $table->integer('stage_id')->default(1);
             $table->text('notes')->nullable();
             $table->timestamps();
         });
