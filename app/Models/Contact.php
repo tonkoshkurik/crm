@@ -59,7 +59,7 @@ class Contact extends Model
     | MUTATORS
     |--------------------------------------------------------------------------
     */
-    public function setCv_pathAttribute($value)
+    public function setCvPathAttribute($value)
     {
         $attribute_name = "cv_path";
         $disk = "public";
