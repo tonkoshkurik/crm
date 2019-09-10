@@ -18,7 +18,7 @@
         <div class="col-md-12">
             <div class="box">
                 <div class="box-header with-border">
-                    <div class="box-title">{{ 'TEST'  }}</div>
+                    <div class="box-title">{{ 'Trello Dashboard test'  }}</div>
                 </div>
 
                 <div class="box-body">

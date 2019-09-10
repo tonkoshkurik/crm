@@ -21,7 +21,7 @@ class Contact extends Model
     // protected $guarded = ['id'];
     protected $fillable = [
         "name", "email", "phone", "position", "city", "experience", "salary", "english_level", "cv_path", "companies",
-        'advantages', 'expectations', 'notes'
+        'advantages', 'expectations', 'notes', 'title'
     ];
     // protected $hidden = [];
     // protected $dates = [];

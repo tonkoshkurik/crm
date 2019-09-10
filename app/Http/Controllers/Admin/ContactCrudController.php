@@ -38,6 +38,11 @@ class ContactCrudController extends CrudController
 //        $this->crud->setFromDb();
         $this->crud->addColumns([
             [
+                'name' => 'title',
+                'label' => 'Title',
+                'type' => 'text'
+            ],
+            [
                 'name' => 'name',
                 'label' => 'Name',
                 'type' => 'text'
@@ -60,6 +65,11 @@ class ContactCrudController extends CrudController
         ]);
 
         $this->crud->addFields([
+            [
+                'name' => 'title',
+                'label' => 'Title',
+                'type' => 'text'
+            ],
             [
                 'name' => 'name',
                 'label' => 'Name',
